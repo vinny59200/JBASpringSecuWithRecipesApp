@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RecipesApplicationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-25T20:17:45" hostname="DESKTOP-063BMPJ" time="17.258">
+  <properties/>
+  <testcase name="start" classname="RecipesApplicationTest" time="17.258"/>
+  <system-out><![CDATA[?[1;31m
+Start test 1?[0m
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.6)
+
+2022-03-25 21:17:45.712  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.1 on DESKTOP-063BMPJ with PID 12708 (started by Vinny in C:\_dev\VVSPRINGBOOT\Recipes\Recipes\task)
+2022-03-25 21:17:45.715  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+2022-03-25 21:17:46.513  INFO 12708 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-25 21:17:46.600  INFO 12708 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 2 JPA repository interfaces.
+2022-03-25 21:17:48.398  INFO 12708 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+2022-03-25 21:17:48.426  INFO 12708 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-25 21:17:48.427  INFO 12708 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-03-25 21:17:48.659  INFO 12708 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-25 21:17:48.659  INFO 12708 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2888 ms
+2022-03-25 21:17:48.878  INFO 12708 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-25 21:17:49.474  INFO 12708 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-25 21:17:49.503  INFO 12708 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:C:/_dev/VVSPRINGBOOT/Recipes/data/sampledata'
+2022-03-25 21:17:50.043  INFO 12708 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-25 21:17:50.179  INFO 12708 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-03-25 21:17:50.556  INFO 12708 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-25 21:17:50.819  INFO 12708 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: create table vvrecipe (id integer not null, category varchar(255), date timestamp, description varchar(255), directions varchar(255), ingredients varchar(255), name varchar(255), owner varchar(255), primary key (id))
+Hibernate: create table vvregistration (id integer not null, email varchar(255), password varchar(255), role varchar(255), primary key (id))
+2022-03-25 21:17:51.912  INFO 12708 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-25 21:17:51.922  INFO 12708 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-25 21:17:51.972  WARN 12708 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-25 21:17:52.901  INFO 12708 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15254569, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d2a4598, org.springframework.security.web.header.HeaderWriterFilter@2559f65c, org.springframework.security.web.authentication.logout.LogoutFilter@2d1f9ec3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2fbd47b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@415419a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49ea4b65, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1390a415, org.springframework.security.web.session.SessionManagementFilter@3833897c, org.springframework.security.web.access.ExceptionTranslationFilter@2b85edc7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ead0b51]
+2022-03-25 21:17:53.933  WARN 12708 --- [    Test worker] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2022-03-25 21:17:53.987  INFO 12708 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-03-25 21:17:54.060  INFO 12708 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+2022-03-25 21:17:54.093  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 8.779 seconds (JVM running for 9.652)
+2022-03-25 21:17:54.693  INFO 12708 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-25 21:17:54.694  INFO 12708 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-25 21:17:54.696  INFO 12708 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-25 21:17:54.918  INFO 12708 --- [nio-8881-exec-1] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:54.929  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> fetching registration by email: LoginTest1@test.com
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:55.031  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> saving vvRegistration: VVRegistration(id=null, email=LoginTest1@test.com, password=Test1111, role=null)
+Hibernate: select vvregistra0_.id as id1_1_, vvregistra0_.email as email2_1_, vvregistra0_.password as password3_1_, vvregistra0_.role as role4_1_ from vvregistration vvregistra0_
+Hibernate: select vvregistra0_.id as id1_1_0_, vvregistra0_.email as email2_1_0_, vvregistra0_.password as password3_1_0_, vvregistra0_.role as role4_1_0_ from vvregistration vvregistra0_ where vvregistra0_.id=?
+Hibernate: insert into vvregistration (email, password, role, id) values (?, ?, ?, ?)
+2022-03-25 21:17:55.293  INFO 12708 --- [nio-8881-exec-1] recipes.vv.controller.RecipeController   : VV9 <## VV ##> POST registration result: VVRegistration(id=1, email=LoginTest1@test.com, password=Test1111, role=ROLE_USER)
+?[1;31m
+Start test 2?[0m
+2022-03-25 21:17:55.333  INFO 12708 --- [nio-8881-exec-2] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:55.335  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : <## VV ##> fetching registration by email: LoginTest1@test.com
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+?[1;31m
+Start test 3?[0m
+2022-03-25 21:17:55.417  INFO 12708 --- [nio-8881-exec-3] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:55.417  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : <## VV ##> fetching registration by email: LoginTest2@test.com
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:55.419  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : <## VV ##> saving vvRegistration: VVRegistration(id=null, email=LoginTest2@test.com, password=Test2222222, role=null)
+Hibernate: select vvregistra0_.id as id1_1_, vvregistra0_.email as email2_1_, vvregistra0_.password as password3_1_, vvregistra0_.role as role4_1_ from vvregistration vvregistra0_
+Hibernate: select vvregistra0_.id as id1_1_0_, vvregistra0_.email as email2_1_0_, vvregistra0_.password as password3_1_0_, vvregistra0_.role as role4_1_0_ from vvregistration vvregistra0_ where vvregistra0_.id=?
+Hibernate: insert into vvregistration (email, password, role, id) values (?, ?, ?, ?)
+2022-03-25 21:17:55.425  INFO 12708 --- [nio-8881-exec-3] recipes.vv.controller.RecipeController   : VV9 <## VV ##> POST registration result: VVRegistration(id=2, email=LoginTest2@test.com, password=Test2222222, role=ROLE_USER)
+?[1;31m
+Start test 4?[0m
+2022-03-25 21:17:55.437  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:55.438  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> fetching registration by email: LoginTest3@test.com
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:55.440  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> saving vvRegistration: VVRegistration(id=null, email=LoginTest3@test.com, password=Test33333333333, role=null)
+Hibernate: select vvregistra0_.id as id1_1_, vvregistra0_.email as email2_1_, vvregistra0_.password as password3_1_, vvregistra0_.role as role4_1_ from vvregistration vvregistra0_
+Hibernate: select vvregistra0_.id as id1_1_0_, vvregistra0_.email as email2_1_0_, vvregistra0_.password as password3_1_0_, vvregistra0_.role as role4_1_0_ from vvregistration vvregistra0_ where vvregistra0_.id=?
+Hibernate: insert into vvregistration (email, password, role, id) values (?, ?, ?, ?)
+2022-03-25 21:17:55.446  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : VV9 <## VV ##> POST registration result: VVRegistration(id=3, email=LoginTest3@test.com, password=Test33333333333, role=ROLE_USER)
+?[1;31m
+Start test 5?[0m
+2022-03-25 21:17:55.456  INFO 12708 --- [nio-8881-exec-5] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:55.456  INFO 12708 --- [nio-8881-exec-5] recipes.vv.controller.RecipeController   : VV9 <## VV ##> registration email is invalid
+?[1;31m
+Start test 6?[0m
+2022-03-25 21:17:55.470  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:55.471  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : VV9 <## VV ##> registration email is invalid
+?[1;31m
+Start test 7?[0m
+2022-03-25 21:17:55.484  INFO 12708 --- [nio-8881-exec-7] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:55.485  INFO 12708 --- [nio-8881-exec-7] recipes.vv.controller.RecipeController   : VV9 <## VV ##> registration password is too short
+?[1;31m
+Start test 8?[0m
+2022-03-25 21:17:55.499  INFO 12708 --- [nio-8881-exec-8] recipes.vv.controller.RecipeController   : <## VV ##> POST registration
+2022-03-25 21:17:55.499  INFO 12708 --- [nio-8881-exec-8] recipes.vv.controller.RecipeController   : VV9 <## VV ##> registration password is null
+?[1;31m
+Start test 9?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:55.558  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@5a3059ea
+2022-03-25 21:17:55.584  INFO 12708 --- [nio-8881-exec-9] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=null, owner=null)
+2022-03-25 21:17:55.585  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=2022-03-25T21:17:55.585603, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 10?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:55.641  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@7dcabc2
+2022-03-25 21:17:55.643  INFO 12708 --- [io-8881-exec-10] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=null, owner=null)
+2022-03-25 21:17:55.644  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644476600, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 11?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:55.678  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@605eed8b
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:55.701  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: VVRecipe(id=1, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=2022-03-25T21:17:55.585603, owner=logintest2@test.com)
+2022-03-25 21:17:55.702  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:17:55.702  INFO 12708 --- [nio-8881-exec-1] recipes.vv.controller.RecipeController   : VV9: get recipe->1
+?[1;31m
+Start test 12?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:55.730  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@87731b0
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:55.734  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:55.734  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:17:55.735  INFO 12708 --- [nio-8881-exec-2] recipes.vv.controller.RecipeController   : VV9: get recipe->2
+?[1;31m
+Start test 13?[0m
+2022-03-25 21:17:56.296  INFO 12708 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-25 21:17:56.297  INFO 12708 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-25 21:17:56.306  INFO 12708 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.6)
+
+2022-03-25 21:17:56.443  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.1 on DESKTOP-063BMPJ with PID 12708 (started by Vinny in C:\_dev\VVSPRINGBOOT\Recipes\Recipes\task)
+2022-03-25 21:17:56.443  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+2022-03-25 21:17:56.749  INFO 12708 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-25 21:17:56.761  INFO 12708 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2022-03-25 21:17:57.060  INFO 12708 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+2022-03-25 21:17:57.061  INFO 12708 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-25 21:17:57.061  INFO 12708 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-03-25 21:17:57.108  INFO 12708 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-25 21:17:57.108  INFO 12708 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 662 ms
+2022-03-25 21:17:57.165  INFO 12708 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-03-25 21:17:57.194  INFO 12708 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-03-25 21:17:57.195  INFO 12708 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:C:/_dev/VVSPRINGBOOT/Recipes/data/sampledata'
+2022-03-25 21:17:57.273  INFO 12708 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-25 21:17:57.284  INFO 12708 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-25 21:17:57.359  INFO 12708 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-25 21:17:57.359  INFO 12708 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-25 21:17:57.399  WARN 12708 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-25 21:17:57.560  INFO 12708 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44aaa987, org.springframework.security.web.context.SecurityContextPersistenceFilter@28c38eeb, org.springframework.security.web.header.HeaderWriterFilter@5d5a77de, org.springframework.security.web.authentication.logout.LogoutFilter@625430f8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@627f678d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ce9985f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4283f29b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23e0b938, org.springframework.security.web.session.SessionManagementFilter@460a4935, org.springframework.security.web.access.ExceptionTranslationFilter@6ae1d5f1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f13ed1]
+2022-03-25 21:17:57.883  WARN 12708 --- [    Test worker] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2022-03-25 21:17:57.908  INFO 12708 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-03-25 21:17:57.933  INFO 12708 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+2022-03-25 21:17:57.945  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.531 seconds (JVM running for 13.503)
+?[1;31m
+Start test 14?[0m
+2022-03-25 21:17:57.954  INFO 12708 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-25 21:17:57.955  INFO 12708 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-25 21:17:57.958  INFO 12708 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:57.964  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@61d98dd5
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:57.978  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: VVRecipe(id=1, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=2022-03-25T21:17:55.585603, owner=logintest2@test.com)
+2022-03-25 21:17:57.978  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:17:57.978  INFO 12708 --- [nio-8881-exec-1] recipes.vv.controller.RecipeController   : VV9: get recipe->1
+?[1;31m
+Start test 15?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:57.995  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@4b3658c2
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:57.999  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:57.999  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:17:57.999  INFO 12708 --- [nio-8881-exec-2] recipes.vv.controller.RecipeController   : VV9: get recipe->2
+?[1;31m
+Start test 16?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.017  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@43fe5078
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.026  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: VVRecipe(id=1, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=2022-03-25T21:17:55.585603, owner=logintest2@test.com)
+2022-03-25 21:17:58.027  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:17:58.027  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : VV16 owner [ctrlr.checkIfUserIsOwner]->logintest2@test.com
+2022-03-25 21:17:58.027  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : VV16 recipe [ctrlr.checkIfUserIsOwner]->VVRecipe(id=1, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=2022-03-25T21:17:55.585603, owner=logintest2@test.com)
+2022-03-25 21:17:58.028  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : <## VV ##> PUT
+2022-03-25 21:17:58.028  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=1, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:58.028897400, owner=null)
+Hibernate: update vvrecipe set category=?, date=?, description=?, directions=?, ingredients=?, name=?, owner=? where id=?
+?[1;31m
+Start test 17?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.050  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@5f27164f
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.054  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: VVRecipe(id=1, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:58.028897, owner=logintest2@test.com)
+2022-03-25 21:17:58.055  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:17:58.055  INFO 12708 --- [nio-8881-exec-5] recipes.vv.controller.RecipeController   : VV9: get recipe->1
+?[1;31m
+Start test 18?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.066  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@1f9b12a2
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.070  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: VVRecipe(id=1, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:58.028897, owner=logintest2@test.com)
+2022-03-25 21:17:58.071  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:17:58.071  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : VV16 owner [ctrlr.checkIfUserIsOwner]->logintest2@test.com
+2022-03-25 21:17:58.071  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : VV16 recipe [ctrlr.checkIfUserIsOwner]->VVRecipe(id=1, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:58.028897, owner=logintest2@test.com)
+2022-03-25 21:17:58.072  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : VV9: delete recipe->1
+2022-03-25 21:17:58.072  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : <## VV ##> deleting recipe: 1
+Hibernate: delete from vvrecipe where id=?
+?[1;31m
+Start test 19?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.101  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@71b02154
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.107  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: null
+2022-03-25 21:17:58.107  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : VV16 owner [service.find]: null
+2022-03-25 21:17:58.107  INFO 12708 --- [nio-8881-exec-7] recipes.vv.controller.RecipeController   : VV9: recipe not found
+?[1;31m
+Start test 20?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.127  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@71261d9d
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.131  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: null
+2022-03-25 21:17:58.131  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : VV16 owner [service.find]: null
+2022-03-25 21:17:58.132  INFO 12708 --- [nio-8881-exec-8] recipes.vv.controller.RecipeController   : VV9: recipe not found
+?[1;31m
+Start test 21?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.149  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@5df83c9e
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.157  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe1: null
+2022-03-25 21:17:58.158  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : VV16 owner [service.find]: null
+2022-03-25 21:17:58.158  INFO 12708 --- [nio-8881-exec-9] recipes.vv.controller.RecipeController   : VV9: recipe not found
+?[1;31m
+Start test 22?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.195  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@200aac8f
+2022-03-25 21:17:58.197  INFO 12708 --- [io-8881-exec-10] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=ice-cream, description=-, ingredients=[--, ---, -], directions=[----, ---], category=Dessert, date=null, owner=null)
+2022-03-25 21:17:58.198  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=ice-cream, description=-, ingredients=[--, ---, -], directions=[----, ---], category=Dessert, date=2022-03-25T21:17:58.197835200, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 23?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.242  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@3b583f90
+2022-03-25 21:17:58.244  INFO 12708 --- [nio-8881-exec-1] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=tea r 4, description=---, ingredients=[-, ----, -], directions=[----, --, --], category=DesserT, date=null, owner=null)
+2022-03-25 21:17:58.244  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=tea r 4, description=---, ingredients=[-, ----, -], directions=[----, --, --], category=DesserT, date=2022-03-25T21:17:58.244711, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 24?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.274  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@56ebbc00
+2022-03-25 21:17:58.277  INFO 12708 --- [nio-8881-exec-2] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=recipe ice-cream 5, description=---, ingredients=[-, --, -], directions=[-, --, ---], category=Desser, date=null, owner=null)
+2022-03-25 21:17:58.277  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=recipe ice-cream 5, description=---, ingredients=[-, --, -], directions=[-, --, ---], category=Desser, date=2022-03-25T21:17:58.277620900, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 25?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.305  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@7b08c55a
+2022-03-25 21:17:58.309  INFO 12708 --- [nio-8881-exec-3] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=--, description=---, ingredients=[---, -, --], directions=[---, -], category=DeSSert, date=null, owner=null)
+2022-03-25 21:17:58.309  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=--, description=---, ingredients=[---, -, --], directions=[---, -], category=DeSSert, date=2022-03-25T21:17:58.309536100, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 26?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.350  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@5c946317
+2022-03-25 21:17:58.353  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=ICE-CREAM, description=----, ingredients=[-, -, --], directions=[---, --, --], category=desserT, date=null, owner=null)
+2022-03-25 21:17:58.353  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=ICE-CREAM, description=----, ingredients=[-, -, --], directions=[---, --, --], category=desserT, date=2022-03-25T21:17:58.353418900, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 27?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.382  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@43fe832f
+2022-03-25 21:17:58.384  INFO 12708 --- [nio-8881-exec-5] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=---, description=--, ingredients=[-, ----], directions=[-----, -, ---], category=dessert, date=null, owner=null)
+2022-03-25 21:17:58.384  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=---, description=--, ingredients=[-, ----], directions=[-----, -, ---], category=dessert, date=2022-03-25T21:17:58.384850200, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 28?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.428  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@748ab7d1
+2022-03-25 21:17:58.430  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=9 recipe Tea test, description=----, ingredients=[-, -, ----], directions=[-----, -, --], category=-, date=null, owner=null)
+2022-03-25 21:17:58.430  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=9 recipe Tea test, description=----, ingredients=[-, -, ----], directions=[-----, -, --], category=-, date=2022-03-25T21:17:58.430734800, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 29?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.459  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@119c85eb
+2022-03-25 21:17:58.462  INFO 12708 --- [nio-8881-exec-7] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=10 ice recipe test, description=--, ingredients=[----, --;, ---], directions=[--, -], category=-, date=null, owner=null)
+2022-03-25 21:17:58.462  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=10 ice recipe test, description=--, ingredients=[----, --;, ---], directions=[--, -], category=-, date=2022-03-25T21:17:58.462824800, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 30?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.491  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@dff4230
+2022-03-25 21:17:58.494  INFO 12708 --- [nio-8881-exec-8] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=11 ice-creamrecipe test, description=-, ingredients=[-, --], directions=[-----, -, ---], category=veryDessert, date=null, owner=null)
+2022-03-25 21:17:58.494  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=11 ice-creamrecipe test, description=-, ingredients=[-, --], directions=[-----, -, ---], category=veryDessert, date=2022-03-25T21:17:58.494740500, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 31?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.536  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@18cae82b
+2022-03-25 21:17:58.539  INFO 12708 --- [nio-8881-exec-9] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=cream, description=--, ingredients=[---, -, -], directions=[-, --], category=BEVerage, date=null, owner=null)
+2022-03-25 21:17:58.539  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=cream, description=--, ingredients=[---, -, -], directions=[-, --], category=BEVerage, date=2022-03-25T21:17:58.539649200, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 32?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.569  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@10ee4bf2
+2022-03-25 21:17:58.571  INFO 12708 --- [io-8881-exec-10] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=ice-cre, description=-, ingredients=[---, -], directions=[----, -, -], category=---Dessert, date=null, owner=null)
+2022-03-25 21:17:58.571  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=ice-cre, description=-, ingredients=[---, -], directions=[----, -, -], category=---Dessert, date=2022-03-25T21:17:58.571570500, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 33?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.613  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@34c58450
+2022-03-25 21:17:58.616  INFO 12708 --- [nio-8881-exec-1] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=ice-cream, description=-, ingredients=[----, --], directions=[-, --, -], category=DESSERT, date=null, owner=null)
+2022-03-25 21:17:58.616  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=ice-cream, description=-, ingredients=[----, --], directions=[-, --, -], category=DESSERT, date=2022-03-25T21:17:58.616959600, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 34?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.644  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@696b26ac
+2022-03-25 21:17:58.646  INFO 12708 --- [nio-8881-exec-2] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=15 recipe test ice-CREAM, description=-, ingredients=[-, ---', -----], directions=[---, -], category=Dessert, date=null, owner=null)
+2022-03-25 21:17:58.647  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=15 recipe test ice-CREAM, description=-, ingredients=[-, ---', -----], directions=[---, -], category=Dessert, date=2022-03-25T21:17:58.647876100, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 35?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.664  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@19ff0779
+2022-03-25 21:17:58.680  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : <## VV ##> search by category: dessert
+Hibernate: SELECT * FROM VVRECIPE r WHERE LOWER(r.CATEGORY) LIKE LOWER(?) ORDER BY r.date DESC
+2022-03-25 21:17:58.688  INFO 12708 --- [nio-8881-exec-3] recipes.vv.controller.RecipeController   : VV9: search recipes7
+?[1;31m
+Start test 36?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.702  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@575a6a27
+2022-03-25 21:17:58.705  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> search by name: ice-cream
+Hibernate: SELECT * FROM VVRECIPE r WHERE LOWER(r.NAME) LIKE LOWER(concat('%', ?,'%')) ORDER BY r.date DESC
+2022-03-25 21:17:58.710  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : VV9: search recipes6
+?[1;31m
+Start test 37?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.725  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@4873d1a5
+2022-03-25 21:17:58.726  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : <## VV ##> search by category: should_return_empty_array_1
+Hibernate: SELECT * FROM VVRECIPE r WHERE LOWER(r.CATEGORY) LIKE LOWER(?) ORDER BY r.date DESC
+2022-03-25 21:17:58.729  INFO 12708 --- [nio-8881-exec-5] recipes.vv.controller.RecipeController   : VV9: search recipes0
+?[1;31m
+Start test 38?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.747  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@1083c762
+2022-03-25 21:17:58.749  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : <## VV ##> search by name: should_return_empty_array_2
+Hibernate: SELECT * FROM VVRECIPE r WHERE LOWER(r.NAME) LIKE LOWER(concat('%', ?,'%')) ORDER BY r.date DESC
+2022-03-25 21:17:58.751  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : VV9: search recipes0
+?[1;31m
+Start test 39?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.761  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@7b9253a8
+?[1;31m
+Start test 40?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.776  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@47945e32
+?[1;31m
+Start test 41?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.789  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@705f32d
+?[1;31m
+Start test 42?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.799  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@6cd6fade
+?[1;31m
+Start test 43?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.811  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@440ec74a
+?[1;31m
+Start test 44?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.825  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@2ea52b4a
+?[1;31m
+Start test 45?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.837  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@49f4c7e8
+?[1;31m
+Start test 46?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.851  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@3832040
+?[1;31m
+Start test 47?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.865  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@3619e98a
+?[1;31m
+Start test 48?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.880  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@500e0fed
+?[1;31m
+Start test 49?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.907  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@15f5b84c
+?[1;31m
+Start test 50?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.919  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@41024f00
+?[1;31m
+Start test 51?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.935  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@6ee47898
+?[1;31m
+Start test 52?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.947  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@67d08d52
+?[1;31m
+Start test 53?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.958  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@5e4d8e4c
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.961  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:58.961  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 54?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.973  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@13f00b6d
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.977  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:58.977  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 55?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:58.988  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@5c6d1fd3
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:58.992  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:58.992  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 56?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:59.003  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@203dfbfb
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:59.007  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:59.007  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 57?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:59.016  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@6277e786
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:59.019  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:59.020  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 58?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:59.031  INFO 12708 --- [io-8881-exec-11] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@dea885b
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:59.035  INFO 12708 --- [io-8881-exec-11] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:59.035  INFO 12708 --- [io-8881-exec-11] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 59?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:59.046  INFO 12708 --- [io-8881-exec-12] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@6e7d0cd0
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:59.048  INFO 12708 --- [io-8881-exec-12] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:59.049  INFO 12708 --- [io-8881-exec-12] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 60?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:59.059  INFO 12708 --- [io-8881-exec-13] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@a1ffc6d
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:59.062  INFO 12708 --- [io-8881-exec-13] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:59.062  INFO 12708 --- [io-8881-exec-13] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 61?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:59.072  INFO 12708 --- [io-8881-exec-15] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@42f6d702
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:59.077  INFO 12708 --- [io-8881-exec-15] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:59.078  INFO 12708 --- [io-8881-exec-15] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 62?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:17:59.090  INFO 12708 --- [io-8881-exec-14] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@117278a9
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:17:59.093  INFO 12708 --- [io-8881-exec-14] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:17:59.093  INFO 12708 --- [io-8881-exec-14] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+?[1;31m
+Start test 63?[0m
+2022-03-25 21:17:59.640  INFO 12708 --- [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-25 21:17:59.641  INFO 12708 --- [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-03-25 21:17:59.647  INFO 12708 --- [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.6)
+
+2022-03-25 21:17:59.676  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.1 on DESKTOP-063BMPJ with PID 12708 (started by Vinny in C:\_dev\VVSPRINGBOOT\Recipes\Recipes\task)
+2022-03-25 21:17:59.676  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+2022-03-25 21:17:59.973  INFO 12708 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-25 21:17:59.982  INFO 12708 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+2022-03-25 21:18:00.658  INFO 12708 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+2022-03-25 21:18:00.661  INFO 12708 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-25 21:18:00.661  INFO 12708 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-03-25 21:18:00.850  INFO 12708 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-25 21:18:00.851  INFO 12708 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1172 ms
+2022-03-25 21:18:01.018  INFO 12708 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-03-25 21:18:01.088  INFO 12708 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-03-25 21:18:01.089  INFO 12708 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:C:/_dev/VVSPRINGBOOT/Recipes/data/sampledata'
+2022-03-25 21:18:01.305  INFO 12708 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-25 21:18:01.363  INFO 12708 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-25 21:18:01.498  INFO 12708 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-25 21:18:01.498  INFO 12708 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-25 21:18:01.532  WARN 12708 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-25 21:18:01.686  INFO 12708 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16a83016, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e05dd42, org.springframework.security.web.header.HeaderWriterFilter@39e0fe23, org.springframework.security.web.authentication.logout.LogoutFilter@6d98e607, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@71ed3bc8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@246701d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ac8f29c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@592efd6, org.springframework.security.web.session.SessionManagementFilter@44f86613, org.springframework.security.web.access.ExceptionTranslationFilter@5a640f98, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1da9f44c]
+2022-03-25 21:18:01.931  WARN 12708 --- [    Test worker] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2022-03-25 21:18:01.953  INFO 12708 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-03-25 21:18:01.974  INFO 12708 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+2022-03-25 21:18:01.991  INFO 12708 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 2.342 seconds (JVM running for 17.549)
+?[1;31m
+Start test 64?[0m
+2022-03-25 21:18:01.998  INFO 12708 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-25 21:18:01.999  INFO 12708 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-25 21:18:02.001  INFO 12708 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.009  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@53f38cc
+2022-03-25 21:18:02.016  INFO 12708 --- [nio-8881-exec-1] recipes.vv.controller.RecipeController   : <## VV ##> POST->VVRecipe(id=null, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=null, owner=null)
+2022-03-25 21:18:02.016  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : <## VV ##> saving recipe: VVRecipe(id=null, name=Fresh Mint Tea /Test, description=Light, aromatic and refreshing beverage, ... /Test, ingredients=[boiled water, honey, fresh mint leaves /Test], directions=[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test], category=beverage /Test, date=2022-03-25T21:18:02.016616100, owner=null)
+Hibernate: select vvrecipe0_.id as id1_0_, vvrecipe0_.category as category2_0_, vvrecipe0_.date as date3_0_, vvrecipe0_.description as descript4_0_, vvrecipe0_.directions as directio5_0_, vvrecipe0_.ingredients as ingredie6_0_, vvrecipe0_.name as name7_0_, vvrecipe0_.owner as owner8_0_ from vvrecipe vvrecipe0_
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+Hibernate: insert into vvrecipe (category, date, description, directions, ingredients, name, owner, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+?[1;31m
+Start test 65?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.046  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@311fab1c
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:18:02.051  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:18:02.052  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:18:02.052  INFO 12708 --- [nio-8881-exec-2] recipes.vv.controller.RecipeController   : VV9: get recipe->2
+?[1;31m
+Start test 66?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.067  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@2115462c
+2022-03-25 21:18:02.075  INFO 12708 --- [nio-8881-exec-3] recipes.vv.service.RecipeService         : <## VV ##> search by category: dessert
+Hibernate: SELECT * FROM VVRECIPE r WHERE LOWER(r.CATEGORY) LIKE LOWER(?) ORDER BY r.date DESC
+2022-03-25 21:18:02.079  INFO 12708 --- [nio-8881-exec-3] recipes.vv.controller.RecipeController   : VV9: search recipes7
+?[1;31m
+Start test 67?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.094  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@2d2e4429
+2022-03-25 21:18:02.096  INFO 12708 --- [nio-8881-exec-4] recipes.vv.service.RecipeService         : <## VV ##> search by name: ice-cream
+Hibernate: SELECT * FROM VVRECIPE r WHERE LOWER(r.NAME) LIKE LOWER(concat('%', ?,'%')) ORDER BY r.date DESC
+2022-03-25 21:18:02.104  INFO 12708 --- [nio-8881-exec-4] recipes.vv.controller.RecipeController   : VV9: search recipes6
+?[1;31m
+Start test 68?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.119  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@3bcbfdf2
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:18:02.124  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:18:02.124  INFO 12708 --- [nio-8881-exec-5] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:18:02.124  INFO 12708 --- [nio-8881-exec-5] recipes.vv.controller.RecipeController   : VV16 owner [ctrlr.checkIfUserIsOwner]->logintest2@test.com
+2022-03-25 21:18:02.124  INFO 12708 --- [nio-8881-exec-5] recipes.vv.controller.RecipeController   : VV16 recipe [ctrlr.checkIfUserIsOwner]->VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+?[1;31m
+Start test 69?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.145  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : VV9: User found->recipes.vv.service.RecipeService$UserDetailsImpl@2b3d7175
+Hibernate: select vvrecipe0_.id as id1_0_0_, vvrecipe0_.category as category2_0_0_, vvrecipe0_.date as date3_0_0_, vvrecipe0_.description as descript4_0_0_, vvrecipe0_.directions as directio5_0_0_, vvrecipe0_.ingredients as ingredie6_0_0_, vvrecipe0_.name as name7_0_0_, vvrecipe0_.owner as owner8_0_0_ from vvrecipe vvrecipe0_ where vvrecipe0_.id=?
+2022-03-25 21:18:02.154  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : <## VV ##> fetching recipe2: VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+2022-03-25 21:18:02.154  INFO 12708 --- [nio-8881-exec-6] recipes.vv.service.RecipeService         : VV16 owner [service.find]: logintest2@test.com
+2022-03-25 21:18:02.154  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : VV16 owner [ctrlr.checkIfUserIsOwner]->logintest2@test.com
+2022-03-25 21:18:02.154  INFO 12708 --- [nio-8881-exec-6] recipes.vv.controller.RecipeController   : VV16 recipe [ctrlr.checkIfUserIsOwner]->VVRecipe(id=2, name=Warming Ginger Tea /Test, description=Ginger tea is a warming drink for cool weather, ... /Test, ingredients=[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test], directions=[Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact), Steep for 5-10 minutes, Drink and enjoy /Test], category=beverage /Test, date=2022-03-25T21:17:55.644477, owner=logintest2@test.com)
+?[1;31m
+Start test 70?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.168  INFO 12708 --- [nio-8881-exec-7] recipes.vv.service.RecipeService         : VV9: User not found->abc@test.com
+?[1;31m
+Start test 71?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.190  INFO 12708 --- [nio-8881-exec-8] recipes.vv.service.RecipeService         : VV9: User not found->abc@test.com
+?[1;31m
+Start test 72?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.200  INFO 12708 --- [nio-8881-exec-9] recipes.vv.service.RecipeService         : VV9: User not found->abc@test.com
+?[1;31m
+Start test 73?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.211  INFO 12708 --- [io-8881-exec-10] recipes.vv.service.RecipeService         : VV9: User not found->abc@test.com
+?[1;31m
+Start test 74?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.219  INFO 12708 --- [nio-8881-exec-1] recipes.vv.service.RecipeService         : VV9: User not found->abc@test.com
+?[1;31m
+Start test 75?[0m
+Hibernate: SELECT * FROM VVREGISTRATION r WHERE LOWER(r.EMAIL) LIKE LOWER(?)
+2022-03-25 21:18:02.228  INFO 12708 --- [nio-8881-exec-2] recipes.vv.service.RecipeService         : VV9: User not found->abc@test.com
+?[1;31m
+Start test 76?[0m
+?[1;31m
+Start test 77?[0m
+?[1;31m
+Start test 78?[0m
+?[1;31m
+Start test 79?[0m
+?[1;31m
+Start test 80?[0m
+?[1;31m
+Start test 81?[0m
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
