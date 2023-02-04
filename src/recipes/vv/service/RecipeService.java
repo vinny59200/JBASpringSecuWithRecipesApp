@@ -38,7 +38,7 @@ public class RecipeService implements UserDetailsService {
         log.info("<## VV ##> saving recipe: " + recipe);
         if (recipe.getId() == null) {
             String owner=SecurityContextHolder.getContext().getAuthentication().getName();
-            return recipeRepository.save(recipe.toBuilder().owner(owner).id(generateNewIdCuzFuckingAutoIncrementFoulsUp()).build());
+            return recipeRepository.save(recipe.toBuilder().owner(owner).id( generateNewIdCuzHellAutoIncrementFoulsUp() ).build() );
         }
         String owner=SecurityContextHolder.getContext().getAuthentication().getName();
         return recipeRepository.save(recipe.toBuilder().owner(owner).build());
@@ -46,7 +46,7 @@ public class RecipeService implements UserDetailsService {
 
     public VVRegistration saveRegistration(VVRegistration vvRegistration) {
         log.info("<## VV ##> saving vvRegistration: " + vvRegistration);
-        return registrationRepository.save(vvRegistration.toBuilder().role("ROLE_USER").id(generateNewIdCuzFuckingAutoIncrementFoulsUpRegistration()).build());
+        return registrationRepository.save(vvRegistration.toBuilder().role("ROLE_USER").id( generateNewIdCuzHellAutoIncrementFoulsUpRegistration() ).build() );
     }
 
     public void delete(Integer id) {
@@ -66,7 +66,7 @@ public class RecipeService implements UserDetailsService {
     }
 
 
-    private int generateNewIdCuzFuckingAutoIncrementFoulsUp() {
+    private int generateNewIdCuzHellAutoIncrementFoulsUp() {
         int newId = 0;
         List<VVRecipe> vvRecipes = new ArrayList<>();
         recipeRepository.findAll().forEach(vvRecipes::add);
@@ -79,7 +79,7 @@ public class RecipeService implements UserDetailsService {
         return newId;
     }
 
-    private int generateNewIdCuzFuckingAutoIncrementFoulsUpRegistration() {
+    private int generateNewIdCuzHellAutoIncrementFoulsUpRegistration() {
         int newId = 0;
         List<VVRegistration> vvRegistrations = new ArrayList<>();
         registrationRepository.findAll().forEach(vvRegistrations::add);
